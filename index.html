@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="css/normalize.css" />
     <!-- main style -->
     <link rel="stylesheet" href="css/style.css" />
+    <!-- main style for arabic direction -->
+    <link rel="stylesheet" href="css/style-rtl.css">
   </head>
   <body>
     <!-- start header -->
@@ -29,34 +31,46 @@
           <a href="index.html"> <img src="images/logo.png" alt="logo" /></a>
         </div>
         <nav>
+          <div id="google_translate_element"></div>
           <div class="language">
             <i class="fa fa-language"></i>
             <ul>
-              <li>Arabic</li>
-              <li>English</li>
+              <li><span data-lang="ar">عربي</span></li>
+              <li><span data-lang="en">English</span></li>
             </ul>
           </div>
           <div class="toggle">
             <i class="fab fa-leanpub"></i>
             <ul class="nav-links">
               <li>
-                <a href="#hire"><i class="fab fa-hire-a-helper"></i>Hire</a>
+                <a href="#hire">
+                  <i class="fab fa-hire-a-helper"></i>
+                  <span data-trans="hire">Hire</span>
+                </a>
               </li>
               <li>
-                <a href="#clients"><i class="fa fa-exchange"></i>Clinets</a>
+                <a href="#clients">
+                  <i class="fa fa-exchange"></i>
+                  <span data-trans="clients">Clients</span>
+                </a>
               </li>
               <li>
-                <a href="#projects"
-                  ><i class="fa fa-clapperboard"></i>Projects</a
-                >
+                <a href="#projects">
+                  <i class="fa fa-clapperboard"></i>
+                  <span data-trans="projects">Projects</span>
+                </a>
               </li>
               <li>
-                <a href="#servises"
-                  ><i class="fab fa-servicestack"></i>Servises
+                <a href="#servises">
+                  <i class="fab fa-servicestack"></i>
+                  <span data-trans="servises">Servises</span>
                 </a>
               </li>
               <li class="active">
-                <a href="#main"><i class="fab fa-leanpub"></i>Main</a>
+                <a href="#main">
+                  <i class="fab fa-leanpub"></i>
+                  <span data-trans="main">Main</span>
+                </a>
               </li>
             </ul>
           </div>
@@ -89,10 +103,9 @@
       <div class="container">
         <!-- قسم الصفحة الرئيسة يوجد فيها تحية الشركة و مقطع لشرح الموقع -->
         <div class="text">
-          <h1>Welcome to Sama Media</h1>
-          <h1>مرحبا بكم في سما ميديا</h1>
-          <p>this is our site.</p>
-          <a href="#projects">See our Projects</a>
+          <h1 data-trans="main-title">Welcome to Sama Media</h1>
+          <p data-trans="main-paragraph">this is our site.</p>
+          <a href="#projects" data-trans="main-projects">See Our Projects</a>
         </div>
         <div class="video">
           <!-- <video width="320" height="240" controls autoplay>
@@ -112,7 +125,7 @@
     <!-- start servises -->
     <div class="servises" id="servises">
       <!-- قسم الخدمات يوجد فيها الخدمات التي تقدمها الشركة -تصميم , طباعة , تنفيذ -->
-      <div class="title-section">Servises</div>
+      <div class="title-section" data-trans="servises">Servises</div>
       <div class="container">
         <div class="design">
           <div class="image">
@@ -151,17 +164,21 @@
     <!-- start projects -->
     <div class="projects" id="projects">
       <!-- قسم المشاريع المنفذة يوجد فيها اعمال الشركة من اعمال جديدة و قديمة -->
-      <div class="title-section">Projects</div>
+      <div class="title-section" data-trans="projects">Projects</div>
       <div class="container">
         <div class="new">
-          <img src="images/project.png" alt="" />
+          <div class="image">
+            <img src="images/project.png" alt="" />
+          </div>
           <h2>The New Project</h2>
           <p>this is project</p>
           <a href="#">See More</a>
         </div>
         <div class="old">
           <div class="project">
-            <img src="images/project.png" alt="" />
+            <div class="image">
+              <img src="images/project.png" alt="" />
+            </div>
             <h2>The old Project</h2>
             <p>this is old project</p>
             <a href="#">See More</a>
@@ -190,10 +207,10 @@
     <!-- end projects -->
 
     <!-- start clients -->
-    <div class="clinets" id="clients">
+    <div class="clients" id="clients">
       <!-- قسم العملاء يوجد فيها الشركات المشتركة حيث تحتوى على صورة الشركة و تعريف لها و اسم الشركة -->
       <!-- ويوجد في نهاية القسم تقييم الشركة -->
-      <div class="title-section">Clinets</div>
+      <div class="title-section" data-trans="clients">clients</div>
       <div class="container">
         <div class="companys">
           <div class="company">
@@ -266,7 +283,7 @@
     <!-- start hire -->
     <div class="hire" id="hire">
       <!-- قسم التوظيف يحتوى على حقول لادخال اسم الشخص و بريد الالكتروني و الملف المراد ارساله -->
-      <div class="title-section">Hire</div>
+      <div class="title-section" data-trans="hire">Hire</div>
       <div class="container">
         <div class="image">
           <img src="images/hire.jpeg" alt="" />
@@ -312,7 +329,7 @@
             <i class="fa fa-paper-plane"></i>
             <input class="button" type="submit" value="Send" />
             <i class="fa fa-cancel"></i>
-            <input class="button" type="reset" value="Clear" />
+            <input class="button" type="reset" value="Clean" />
           </form>
         </div>
       </div>
@@ -358,7 +375,17 @@
       </p>
     </footer>
     <!-- end footer -->
+
     <!-- java script file -->
     <script src="js/script.js"></script>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+      }
+      </script>
+      
+      <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+      <!-- <script src="js/translate.js" type="module"></script> -->
+      <script src="js/translate.js"></script>
   </body>
 </html>

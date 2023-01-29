@@ -1,0 +1,24 @@
+/** #region header */
+/* start header */
+body[dir="rtl"] header .container {
+  flex-direction: row-reverse;
+}
+
+body[dir="rtl"] header nav {
+  flex-direction: row-reverse;
+}
+body[dir="rtl"] header nav .nav-links {
+  flex-direction: row-reverse;
+}
+body[dir="rtl"] header nav .language ul {
+  animation: fadeInFromNoneRTL 0.5s ease-out;
+  transform: translate(40px, 0px);
+}
+@keyframes fadeInFromNoneRTL {
+  0% {
+    transform: translate(40px, 10px);
+    opacity: 0;
+  }
+}
+/* end header */
+/** #endregion */

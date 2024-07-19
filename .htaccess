@@ -1,0 +1,27 @@
+#to enter the files without extintion (.html, .php)
+Options +MultiViews
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+#منع المستخدم من الوصول للمجلدات
+Options -Indexes
+
+ErrorDocument 404 "<h1 style='text-align:center;'>Error 404</h1>"
+
+# to compress files of the project   لتسريع الموقع
+
+<ifmodule mod_deflate.c>
+   AddOutputFilerByType mod_deflate
+   text/text
+   text/html
+   text/css
+   text/plain
+   text/xml
+   application/javascript
+   application/x-javascript
+</ifmodule>
